@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: #2a364f;
+        }
+        h1{
+            text-align: center; color:rgba(255, 255, 255, 0.8)
+        }
+        .credit{
+            text-align: center; color: rgba(255, 255, 255, 0.4);
+        }
+        .content{
+            padding-top: 45px; padding-bottom: 20px;
+        }
+        .button_container{
+            width: 176px; margin: 0 auto; margin-top: 30px; padding-top: 40px;
+        }
+        .button_su{
+            overflow: hidden; position: relative; display: inline-block; border-radius: 3px; margin-bottom: 30px;
+            box-shadow: 0px 10px 8px -8px rgba(255, 255, 255, 0.6);
+        }
+        .su_button_circle{
+            background-color: red; border-radius: 1000px; position: absolute; left: 0; top: 0; width: 0; height: 0;
+            margin-left: 0px; margin-top: 0px; pointer-events: none;
+        }
+        .button_su_inner{
+            display: inline-block; background: #f8b627; color: #f4f4f4f4; font-size: 16px; font-weight: normal; width: 132px;
+            text-align: center; border-radius: 3px; transition: 400ms; text-decoration: none; padding: 22px; z-index: 10000;
+        }
+        .button_text_container{
+            position: relative ; z-index: 10000;
+        }
+        .explode-circle{
+            animation:  explode 0.5s forwards;
+        }
+        .desplode-circle{
+            animation: desplode 0.5s forwards;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Different Events Type in JavaScript</h1>
+        <div class="button_container">
+            <div class="button_su">
+                <span class="su_button_circle">
+                </span>
+                    <a href="#" class="button_su_inner" onclick="alert(' I am awesome but no one use me ')">
+                        <span class="button_text_container"> simple Inline alert()
+
+                        </span>
+                    </a>
+            </div>
+            <div class="button_su">
+                <span class="su_button_circle"></span>
+                <a href="#" class="button_su_inner" onclick="callingFunction()">
+                <span class="button_text_container"> By calling a Function
+
+                </span>
+            </a>
+            </div>
+            <div class="button_su">
+                <span class="su_button_circle">
+
+                </span>
+                <a href="#" class="button_su_inner">
+                    <span class="button_text_container" id="thirdWay">
+                        inline  event
+                    </span>
+                </a>
+            </div>
+            <div class="button_su">
+                <span class="su_button_circle">
+
+                </span>
+                <a href="#" class="button_su_inner" id="fourtWay">
+                    <span class="button_text_container">
+                        Event Listeners
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // 2nd way to writion function
+const  callingFunction =  ()=>{
+    alert("most common function")
+}
+    // 3rd way writing function
+    const thirdWay = document.getElementById('thirdWay');
+
+    thirdWay.onclick = function(){
+        console.log('most common way of writing function again')
+    }
+    thirdWay.onclick = function(){
+        alert('most common way of writing function again')
+    }
+   
+    // 4th way writig function
+    const fourtWay = document.querySelector('#fourtWay');
+
+    fourtWay.addEventListener('click', ()=>{
+        alert('i love this way of writiong function')
+    })
+    fourtWay.addEventListener('click', ()=>{
+        console.log('i love this way of writiong function')
+    })
+
+
+    </script>
+</body>
+</html>

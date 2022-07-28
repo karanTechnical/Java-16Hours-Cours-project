@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <!-- <p id="myData">Welcome to my chanel 😍 </p>
+  <button onclick="startTimer()"> see magic</button> -->
+
+
+   <!-- <script>
+       let myData = document.querySelector('#myData');
+
+       function welcome(){
+           myData.innerHTML = `hi welcome to karan Technical 🥇`;
+       }
+       function startTimer(){
+           myData.innerHTML = ` please wait lodding data ...⏳ ` ;
+           setTimeout(welcome,1000)
+       }
+   </script> -->
+
+   <!-- ///////////////////anonimys function;/////////////// -->
+
+   <!-- <script>
+       let myData = document.querySelector('#myData');
+       
+       function startTimer(){
+           myData.innerHTML = ` please wait lodding data ...⏳ `;
+           setTimeout(()=>{
+               myData.innerHTML = `hi welcome to karan Technical 🥇`;
+
+           },1000)
+       }
+    </script> -->
+       
+    <!-- //    setInterval function////// -->
+
+    <p id="myData">What is your Lucky Number 😍 </p>
+  <button onclick="startTimer()"> start Timer</button>
+  <button onclick="stopTimer()"> stop Timer</button>
+
+           <script>
+               let myData = document.querySelector('#myData');
+               let num = 0;
+               let timerRef;
+               function startTimer(){
+                   myData.innerHTML = `Please wait looding data .....⏳`;
+                   
+                   timerRef = setInterval(()=>{
+                       myData.innerHTML = `Hi iam guesssing your lucky numbar 👍is it ${num} 🧝‍♂️`;
+                       num++;
+                   },1000)
+               }
+               function stopTimer(){
+                   clearInterval(timerRef)
+               }
+           </script>
+      
+ 
+</body>
+</html>

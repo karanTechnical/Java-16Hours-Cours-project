@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0; padding: 0; box-sizing: border-box;
+        }
+        body{
+            width: 100vw; height: 100vh; display: flex; justify-content: center; align-items: center; background-color: rgb(133, 196, 238);
+        }
+        .face{
+            width: 600px; height: 550px; background-color: #fff; border-radius: 50%; display: flex; justify-content: space-around;
+            align-items: center; flex-direction: column; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        .eyes{
+            width: inherit; height: 300px; display: flex; justify-content: space-around; align-items: center;
+
+        }
+        .eye{
+            width: 250px ; height: 250px; background-color: #fff; border-radius: 50%; display: flex;
+            justify-content: space-around; align-items: center;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            overflow: hidden;
+        }
+        .pupil{
+            width: 50px; height: 50px; background-color: black;
+            border-radius: 50%; box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="center-div">
+    <div class="face">
+        <div class="eyes">
+            <div class="eye">
+            <div class="pupil"></div>
+
+        </div>
+        <div class="eye">
+            <div class="pupil"></div>
+
+        </div>
+    </div>
+    </div>
+
+</div>
+
+
+
+   <script>
+  
+  let pupils = document.getElementsByClassName('pupil');
+  console.log(pupils); 
+  let pupilArr = Array.from(pupils);
+
+    //pupil moment Start  point//
+
+    let pupilStartPoint = -100;
+    let pupilRange = 200;
+
+//mouse X position
+    let mouseXStartPoint = 0;
+    let mouseXEndPoint = window.innerWidth;
+    let currentXPosition = 0;
+    let fracXValue = 0;
+
+    ///mouse Y position
+    
+    let mouseYEndPoint = window.innerHeight;
+    let currentYPosition = 0;
+    let fracYValue = 0;
+
+
+    let mouseXRange = mouseXEndPoint - mouseXStartPoint;
+
+    const mouseMove = (event) =>{
+
+        currentXPosition = event.clientX - mouseXStartPoint ;
+        fracXValue = currentXPosition / mouseXRange;
+     
+
+        currentYPosition = event.clientY;
+        fracYValue = currentYPosition / mouseYEndPoint;
+        
+       let pupleXCurrenPosition = pupilStartPoint + (fracXValue * pupilRange);
+
+       let pupleYCurrenPosition = pupilStartPoint + (fracYValue * pupilRange);
+
+       pupilArr.forEach((curPupil)=>{
+         curPupil.style.transform = `translate(${pupleXCurrenPosition}px, ${pupleYCurrenPosition}px)`;
+       })
+
+
+     
+    }
+
+    const windowResize = (event)=>{
+        mouseXEndPoint = window.innerWidth;
+        mouseYEndPoint = window.innerHeight;
+        mouseXRange = mouseXEndPoint - mouseXStartPoint;
+    }
+
+    window.addEventListener('mousemove', mouseMove);
+    window.addEventListener('resize', windowResize);
+   </script> 
+</body>
+</html>

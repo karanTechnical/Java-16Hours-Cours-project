@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{ background: #2a364f; display: grid; place-items: center;}
+        button{
+            display: inline-block; background: #f8b627; color: white; font-size: 16px; font-weight: normal;
+            width: 132px; text-align: center; border-radius: 3px; transition: 400ms; text-decoration: none; padding: 10px 22px;
+            z-index: 100000; outline: none; border: none;
+        }
+        p,form{
+            text-align: center; color: rgba(255, 255, 255, 0.8);
+        }
+        h1{
+            color: aquamarine;
+        }
+        button{cursor: pointer;}
+    </style>
+</head>
+<body>
+    <p class="para">Plz like the video</p>
+    <p class="para"> Plz shar this video</p>
+    <p>Don't forget to subscribe my chanel</p>
+    <h1 id="heading"> Changed the content of the h1</h1>
+    <form action="">
+        <label for="">male</label>
+        <input type="radio" name="gender" id="">
+        <label for="">female</label>
+        <input type="radio" name="gender" id="">
+        <label for="">maleFemale</label>
+        <input type="radio" name="gender" id="">
+    </form>
+    <br>
+    <button onclick="changeContent()">Click me</button>
+</body>
+<script>
+    const changeContent = ()=>{
+//  document.getElementById('heading').innerHTML = "Welcome to Karan Technincal"
+//
+// const headingchange = document.getElementById('heading');
+// headingchange.innerHTML = "Welcome to karan technical"
+//
+//  document.querySelector('.para').innerHTML = "Thank you for like Subscribe"  //if one element use queryse
+//  document.querySelectorAll('.para').innerHTML = "Thank you for like Subscribe"  // class and id can choser . # put 
+//  //
+//  console.log( document.getElementsByClassName('para'))  ////find multiple class
+
+//  console.log(document.getElementsByTagName('p'));   // withough id class tagname
+
+///
+
+// console.log(document.getElementsByName('gender')); 
+////
+document.querySelector('#heading').innerHTML = "Welcome to karanTechnical "
+document.querySelector('.para').innerHTML = "Welcome to karanTechnical "
+
+
+
+
+    }
+</script>
+</html>
